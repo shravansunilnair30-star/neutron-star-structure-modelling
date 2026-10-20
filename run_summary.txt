@@ -1,0 +1,8 @@
+Educational TOV solver run summary
+EOS: P = K rho_0^Gamma, K=100000, Gamma=2
+Successful models: 40 of 40
+Maximum mass in sampled grid: 1.3571 solar masses
+Radius at sampled maximum: 9.314 km
+Central pressure at sampled maximum: 8.3768e+35 dyn/cm^2
+
+IMPORTANT: these are model-dependent toy-EOS results, not observational predictions.

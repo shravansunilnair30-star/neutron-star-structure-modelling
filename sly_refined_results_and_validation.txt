@@ -1,0 +1,21 @@
+REFINED SLy piecewise-polytrope TOV run
+
+Model: Read et al. (2009) high-density piecewise-polytrope parameters, with a matched low-density polytropic crust approximation. This is not the original tabulated SLy4 EOS.
+Solver: SciPy solve_ivp DOP853; rtol=1e-9; maximum radial step 1e4 cm.
+Central-pressure samples: 220 requested; 220 successfully integrated.
+
+NUMERICAL RESULTS
+Unrestricted maximum sampled mass: 2.046263 M_sun at R=9.97695 km and central pressure 1.399970e+36 dyn/cm^2.
+Interpolated radius at exactly 1.4 M_sun on the low-central-pressure branch: R_1.4=11.75444 km (interpolated between M=1.391979 and 1.405318 M_sun).
+Central sound-speed causality threshold (c_s^2/c^2=1): p_c approximately 1.393009e+36 dyn/cm^2, M approximately 2.046256 M_sun, R approximately 9.98219 km.
+Maximum sampled mass among models whose CENTRAL sound speed is <= c: 2.046225 M_sun at R=10.00429 km, p_c=1.363651e+36 dyn/cm^2.
+
+QUANTITATIVE BENCHMARK
+Reference values commonly tabulated for the Read et al. SLy piecewise-polytrope fit: M_max approximately 2.06 M_sun and R_1.4 approximately 11.4 km.
+Unrestricted maximum-mass difference: -0.67%.
+R_1.4 difference: +3.11%.
+
+VALIDATION VERDICT: NOT FULLY VALIDATED / NOT YET CV-READY AS A PHYSICAL SLy4 RESULT.
+The maximum-mass agreement alone is not sufficient: the high-central-pressure part of this approximate EOS becomes acausal (c_s > c), including around the unrestricted sampled peak. The R_1.4 estimate also differs from the quoted reference by several percent. The central sound-speed check is a necessary but not sufficient causality check; a complete check must cover the EOS and each star's full interior. The low-density crust treatment and the use of a piecewise-polytropic fit instead of the tabulated SLy4 EOS contribute model discrepancy.
+
+What is defensible now: the code solves the TOV equations for a specified piecewise-polytropic EOS, produces a reproducible mass-radius sequence, and passes the tested numerical integration sensitivity checks. It does NOT yet demonstrate a fully validated reproduction of the published SLy4 mass-radius curve or a physically valid maximum-mass prediction. Before claiming that, replace the approximate EOS with a vetted tabulated EOS, implement thermodynamically consistent interpolation, verify c_s <= c over the EOS and all stellar interiors, and benchmark against a published curve/table under matching conventions.

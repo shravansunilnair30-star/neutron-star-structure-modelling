@@ -1,0 +1,31 @@
+PHYSICAL VALIDATION RESULTS — SLy PIECEWISE-POLYTROPE APPROXIMATION
+
+Model identity: Read et al. (2009) SLy piecewise-polytropic approximation with matched low-density polytropic crust.
+Important: this run does NOT load the CompOSE eos.thermo table. It compares this analytic approximation with the rounded reference properties on the official CompOSE RG(SLY4) page.
+
+EOS causality test (full interior):
+  Density where analytic EOS reaches c_s=c: 2.008568e+15 g/cm^3
+  Corresponding central pressure: 1.392931e+36 dyn/cm^2
+  Maximum c_s^2/c^2 over causal-boundary stellar interior: 0.9999999702
+  Density of maximum c_s^2/c^2: 2.008568e+15 g/cm^3; EOS segment index: 3
+  Causality check: PASS
+
+Results at causal boundary (tiny 1e-7 fractional safety margin):
+  Mass: 2.0462668 M_sun
+  Radius: 9.982195 km
+  R(1.4 M_sun), interpolated from causal sequence: 11.754450 km
+
+Official CompOSE RG(SLY4) page reference (rounded):
+  Mmax = 2.060 M_sun; R at Mmax = 10.020 km; R(1.4) = 11.700 km
+  Relative differences: Mmax -0.667%; R at Mmax -0.377%; R(1.4) +0.465%
+  Scalar-reference comparison (<2% all metrics): PASS
+
+Numerical convergence:
+  Largest absolute change across tested tolerances/step sizes: mass 8.00932e-07%; radius 2.45568e-05%
+  Convergence check (<0.1%): PASS
+
+OVERALL INTERPRETATION:
+  Approximation-level checks: PASS.
+  This is encouraging evidence that the causal branch of the analytic SLy approximation is numerically stable and close to the published RG(SLY4) global properties.
+  It is NOT a full validation of a tabulated SLy4 EOS implementation: the original CompOSE table was not loaded, and the compared model uses an analytic piecewise-polytropic fit with an approximate crust. Do not describe it as an exact reproduction of tabulated SLy4.
+  A full tabulated-EOS validation still requires running neutron_star_compose.py with the official cold CompOSE files (eos.thermo and eos.nb), checking its full EOS causality curve and convergence, and comparing its computed sequence to the official eos.mr curve.

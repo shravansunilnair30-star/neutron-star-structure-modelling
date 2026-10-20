@@ -1,0 +1,6 @@
+SLy piecewise-polytropic TOV run
+EOS parameters from Read et al. (2009): log10(p1 [dyn/cm^2])=34.384, Gamma1=3.005, Gamma2=2.988, Gamma3=2.851; crust/core match rho0=10^14.3, rho1=10^14.7, rho2=10^15 g/cm^3.
+Successful models: 70/70
+Maximum mass on sampled grid: 2.04625 Msun at R=9.9972 km.
+Nearest sampled 1.4 Msun model: M=1.38384 Msun, R=11.7656 km.
+Caveat: the outer crust is represented by a matched low-density polytrope, not a tabulated BPS/SLy4 crust. This is a literature-calibrated approximation, not a full microphysical EOS reproduction. Compare the trend to Read et al. (2009), who report approximately Mmax=2.06 Msun and R1.4=11.4 km for SLy.

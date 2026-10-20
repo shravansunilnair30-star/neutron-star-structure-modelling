@@ -1,0 +1,7 @@
+SLy piecewise-polytrope numerical sensitivity check
+Comparisons are relative to baseline; this tests solver stability, not physical EOS accuracy.
+
+baseline: Mmax(sampled)=2.0462488 Msun, R=9.99716 km, ΔM=+0%, ΔR=+0%
+tight_tolerance: Mmax(sampled)=2.0462488 Msun, R=9.99716 km, ΔM=+6.32223e-07%, ΔR=+1.61728e-05%
+half_max_step: Mmax(sampled)=2.0462489 Msun, R=9.99716 km, ΔM=+3.00159e-06%, ΔR=-7.58393e-07%
+tight_and_half_step: Mmax(sampled)=2.0462488 Msun, R=9.99716 km, ΔM=+1.11829e-06%, ΔR=-7.28156e-06%
